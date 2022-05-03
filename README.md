@@ -253,14 +253,14 @@ These Beats allow us to collect the following information from each machine:
 Filebeat collects information about the file system and sends the log files to Logstash and Elasticsearch. In this case it will be used to collect Apache server
 and MySQL database logs from the DVWA instances.
 
-
+Metricbeat collects metrics from the OS and from services running on the DVWA instances and sends them to Elasticsearch or Logstash.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the install-elk.yml file to /etc/ansible/roles/install-elk.yml.
+- Update the hosts file to include [elk] and 10.1.04 ansible_python_interpreter=/usr/bin/python3
 - Run the playbook, and navigate to http://ElkStackExternalIP:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
