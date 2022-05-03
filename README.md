@@ -181,13 +181,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- _TODO: *What aspect of security do load balancers protect? *What is the advantage of a jump box?_
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 Load balancers help protect against DDOS attacks by providing redundancy and fault tolerance. They also serve as a gateway address that outside sources have to access which
 then forwards traffic to the machines behind it. This helps reduce the attack surface. 
-The advantage of a jump box is that it provides a secure way to provide access in different security zones. It provides one means of access that be
+The advantage of a jump box is that it provides a secure way to provide access in different security zones. It provides one means of access that can be
 secured, monitored, and audited. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 - Filebeat collects data about the file system.
 - Metricbeat collects machine metrics, like uptime.
 
@@ -228,8 +228,11 @@ there is a greatly reduced chance of human error and the ability to deploy many 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- install Docker
+- install python3
+- install Docker module
+- set to use more memory
+- download and launch docker elk container including setting ports and enabling on boot
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
