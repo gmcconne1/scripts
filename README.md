@@ -6,6 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml file may be used to install only certain pieces of it, such as Filebeat.
 
+(Ansible/DVWA/install-dvwa.yml)
   ---
 - name: Config Web VM with Docker
   hosts: webservers
@@ -250,6 +251,10 @@ Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+Filebeat collects information about the file system and sends the log files to Logstash and Elasticsearch. In this case it will be used to collect Apache server
+and MySQL database logs from the DVWA instances.
+
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
