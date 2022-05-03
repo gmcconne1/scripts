@@ -228,8 +228,8 @@ there is a greatly reduced chance of human error and the ability to deploy many 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- install Docker ![2022-05-03_13h49_06](https://user-images.githubusercontent.com/12735438/166510227-114a2db0-e98d-4659-bbe1-96308c780018.png)
-- install python3
+- install Docker
+- install python3 
 - install Docker module
 - set to use more memory
 - download and launch docker elk container including setting ports and enabling on boot
