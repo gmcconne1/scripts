@@ -5,8 +5,7 @@ The files in this repository were used to configure the network depicted below.
 ![TODO: Update the path with the name of your diagram](Images/Elk_Stack.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml file may be used to install only certain pieces of it, such as Filebeat.
-
-(Ansible/DVWA/install-dvwa.yml)
+ 
   ---
 - name: Config Web VM with Docker
   hosts: webservers
@@ -230,6 +229,7 @@ there is a greatly reduced chance of human error and the ability to deploy many 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - install Docker
+![2022-05-03_13h49_06](https://user-images.githubusercontent.com/12735438/166510227-114a2db0-e98d-4659-bbe1-96308c780018.png)
 - install python3
 - install Docker module
 - set to use more memory
