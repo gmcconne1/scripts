@@ -5,7 +5,7 @@ The files in this repository were used to configure the network depicted below.
 ![TODO: Update the path with the name of your diagram](Images/Elk_Stack.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yaml file may be used to install only certain pieces of it, such as Filebeat.
-
+ 
   ---
 - name: Config Web VM with Docker
   hosts: webservers
@@ -229,7 +229,7 @@ there is a greatly reduced chance of human error and the ability to deploy many 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - install Docker
-- install python3
+- install python3 
 - install Docker module
 - set to use more memory
 - download and launch docker elk container including setting ports and enabling on boot
@@ -250,18 +250,24 @@ Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+Filebeat collects information about the file system and sends the log files to Logstash and Elasticsearch. In this case it will be used to collect Apache server
+and MySQL database logs from the DVWA instances.
+
+Metricbeat collects metrics from the OS and from services running on the DVWA instances and sends them to Elasticsearch or Logstash.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the install-elk.yml file to /etc/ansible/roles/install-elk.yml.
+- Update the hosts file to include [elk] and 10.1.04 ansible_python_interpreter=/usr/bin/python3
 - Run the playbook, and navigate to http://ElkStackExternalIP:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
+ Copy the install-elk.yml file to /etc/ansible/roles/install-elk.yml.
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+Update the hosts file. The option under [elk] will have the ELK server installed versus [web servers] which will have filebeat installed.
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
